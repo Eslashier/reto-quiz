@@ -25,6 +25,7 @@ if __name__ == "__main__":
 
     elif menu == "3": # Opcion para guardar el set de preguntas en el archivo questions.p
         
+        """
         questions = [Question(0, "¿Cuál es el libro más vendido de todos los tiempos?", "El libro más vendido es la biblia", "a)Don Quijote\nb)El Señor de los Anillos\nc)La Biblia\nd)Harry Potter y la piedra filosofal\n:", "c"), 
                     Question(0, "¿Cuál es el nombre de la actual Reina de Inglaterra? ", "La actual reina de inglaterra se llama Isabel", "a)Isabel\nb)Margarita\nc)Ana\nd)Victoria\n:", "a"),
                     Question(0, "¿Cuántos corazones tiene un pulpo?", "Los pulpos tienen 3 corazones", "a)2\nb)1\nc)4\nd)3\n:", "d"),
@@ -51,7 +52,8 @@ if __name__ == "__main__":
                     Question(4,"¿Cuántos dientes permanentes tienen los perros?", "Los perros tienen 42 dientes permanentes", "a)40\nb)39\nc)35\nd)42\n:", "d"),
                     Question(4,"¿Cuál es el único continente donde no se encuentran especies de hormigas?", "El único continente donde no se encuentran hormigas es la Antártida", "a)Oceanía\nb)Antártida\nc)África\nd)Europa\n:", "b"),
                     ]
-                    
+        """
+
         pickle.dump( questions, open( "questions.p", "wb" ) ) #Guardar preguntas
         clearConsole()
         print("Se guardaron las preguntas en el archivo questions.p")
