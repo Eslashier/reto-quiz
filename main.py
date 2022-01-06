@@ -74,7 +74,8 @@ def main():
         clearConsole()
         sys.exit("Programa terminado")
 
-main()
+if __name__ == '__main__':
+    main()
 
 
         
