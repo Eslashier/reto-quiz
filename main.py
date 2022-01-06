@@ -1,6 +1,7 @@
 from model_questions import Question
 from model_score import Score
 from model_quiz import Quiz
+import sys 
 import os
 import pickle
 
@@ -8,20 +9,29 @@ clearConsole = lambda: os.system('cls' if os.name in ('nt', 'dos') else 'clear')
 
 
 
-if __name__ == "__main__":
+def main():
+
     clearConsole()
     print("*********************************")
     print("******Bienvenido a QuizRush******")
     print("*********************************")
 
-    menu = input("Por favor seleccione una opcion: \n 1. Nuevo  juego \n 2. Ver historico de puntuaciones\n")  #Menu inicial
+    menu = input("Por favor seleccione una opcion: \n 1. Nuevo  juego \n 2. Ver historico de puntuaciones\n e. Salir\n")  #Menu inicial
+
+    while menu not in ["1","2","3","e"]: #Estructura de control en caso de que el usuario no ingrese s o n
+                        print("Por favor ingrese S para continuar N para terminar") #Se solicita nuevamente al usuario ingresar una respuesta 
+                        menu = input()
+                        menu = menu.lower()
+
     if menu == "1": #Se inicia el juego
         clearConsole()
         Quiz.run()
+        main()
 
     elif menu == "2": #Se pueden ver los puntajes historicos
         clearConsole()
         Score.historic()
+        main()
 
     elif menu == "3": # Opcion para guardar el set de preguntas en el archivo questions.p
         
@@ -52,11 +62,20 @@ if __name__ == "__main__":
                     Question(4,"¿Cuántos dientes permanentes tienen los perros?", "Los perros tienen 42 dientes permanentes", "a)40\nb)39\nc)35\nd)42\n:", "d"),
                     Question(4,"¿Cuál es el único continente donde no se encuentran especies de hormigas?", "El único continente donde no se encuentran hormigas es la Antártida", "a)Oceanía\nb)Antártida\nc)África\nd)Europa\n:", "b"),
                     ]
-        """
+        
 
         pickle.dump( questions, open( "questions.p", "wb" ) ) #Guardar preguntas
         clearConsole()
         print("Se guardaron las preguntas en el archivo questions.p")
+        """
+        main()
+
+    elif menu == "e": #salir del programa
+        clearConsole()
+        sys.exit("Programa terminado")
+
+main()
+
 
         
 

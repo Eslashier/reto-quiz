@@ -71,3 +71,5 @@ class Quiz:
                 user = input("Por favor ingrese su nick o iniciales\n") #Se solicita el nombre de usuario
                 Score.update(user,score) #Se llama la funcion para actualizar o agregar usuario y puntaje.
                 break
+
+      

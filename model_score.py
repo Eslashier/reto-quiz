@@ -22,10 +22,12 @@ class Score:
             hscores[x].score = hscores[x].score + score #Se le suma a la variable score el puntaje obtenido en el juego actual
             print("Tu puntaje actual es de", hscores[x].score) #Se escribe en pantalla el puntaje historico del usuario
             pickle.dump( hscores, open( "scores.p", "wb" ) ) #Se reescribe el archivo scores.p con la información actualizada
+            input("Presione enter para volver")
         else: #Si el usuario no existe
             userscore = Score(user,score) #Se crea un nuevo objeto con las propiedades de Score
             hscores.append(userscore) #Se anexa el nuevo objeto a la estructura
             pickle.dump( hscores, open( "scores.p", "wb" ) ) #Se reescribe el archivo scores.p con la información añadida
+            input("Presione enter para volver")
 
     def historic():
 
@@ -41,4 +43,7 @@ class Score:
         while x<len(hscores):
             print("     "+hscores[x].user,"".ljust(30) + str(hscores[x].score), "pts") #Se imprime el nombre de usuario y la puntuación
             x += 1
+
+        input("Presione enter para volver")
+
 
